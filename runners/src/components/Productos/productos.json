@@ -1,72 +1,82 @@
 [
-    {
-      "_id": "63517efad6b18bbca6c19739",
-      "nombre": "Té Dharamsala",
-      "descripcion": "10 cajas x 20 bolsas",
-      "precio": "18999",
-      "stock": 39
-    },
-    {
-      "_id": "63517efad6b18bbca6c1973a",
-      "nombre": "Cerveza tibetana Barley",
-      "descripcion": "24 - bot. 12 l",
-      "precio": "19999",
-      "stock": 17
-    },
-    {
-      "_id": "63517efad6b18bbca6c1973b",
-      "nombre": "Refresco Guaraná Fantástica",
-      "descripcion": "12 - latas 355 ml",
-      "precio": "5999",
-      "stock": 20
-    },
-    {
-      "_id": "63517efad6b18bbca6c1973c",
-      "nombre": "Cerveza Sasquatch",
-      "descripcion": "24 - bot. 12 l",
-      "precio": "14999",
-      "stock": 111
-    },
-    {
-      "_id": "63517efad6b18bbca6c1973d",
-      "nombre": "Cerveza negra Steeleye",
-      "descripcion": "24 - bot. 12 l",
-      "precio": "18999",
-      "stock": 20
-    },
-    {
-      "_id": "63517efad6b18bbca6c1973e",
-      "nombre": "Vino Côte de Blaye",
-      "descripcion": "12 - bot. 75 cl",
-      "precio": "264999",
-      "stock": 17
-    },
-    {
-      "_id": "63517efad6b18bbca6c1973f",
-      "nombre": "Licor verde Chartreuse",
-      "descripcion": "750 cc por bot.",
-      "precio": "18999",
-      "stock": 69
-    },
-    {
-      "_id": "63517efad6b18bbca6c19740",
-      "nombre": "Café de Malasia",
-      "descripcion": "16 - latas 500 g",
-      "precio": "46999",
-      "stock": 17
-    },
-    {
-      "_id": "63517efad6b18bbca6c19741",
-      "nombre": "Cerveza Laughing Lumberjack",
-      "descripcion": "24 - bot. 12 l",
-      "precio": "14999",
-      "stock": 52
-    },
-    {
-      "_id": "63517efad6b18bbca6c19742",
-      "nombre": "Cerveza Outback",
-      "descripcion": "24 - bot. 355 ml",
-      "precio": "15999",
-      "stock": 15
-    }
-  ]
+  {
+    "_id": "63517efad6b18bbca6c19739",
+    "nombre": "Té Dharamsala",
+    "descripcion": "10 cajas x 20 bolsas",
+    "precio": "18999",
+    "stock": 39,
+    "image": "https://img.icons8.com/wired/344/tea.png"
+  },
+  {
+    "_id": "63517efad6b18bbca6c1973a",
+    "nombre": "Cerveza tibetana Barley",
+    "descripcion": "24 - bot. 12 l",
+    "precio": "19999",
+    "stock": 17,
+    "image": "https://img.icons8.com/wired/344/beer.png"
+  },
+  {
+    "_id": "63517efad6b18bbca6c1973b",
+    "nombre": "Refresco Guaraná Fantástica",
+    "descripcion": "12 - latas 355 ml",
+    "precio": "5999",
+    "stock": 20,
+    "image": "https://img.icons8.com/wired/344/energy-drink.png"
+  },
+  {
+    "_id": "63517efad6b18bbca6c1973c",
+    "nombre": "Cerveza Sasquatch",
+    "descripcion": "24 - bot. 12 l",
+    "precio": "14999",
+    "stock": 111,
+    "image": "https://img.icons8.com/wired/344/beer.png"
+  },
+  {
+    "_id": "63517efad6b18bbca6c1973d",
+    "nombre": "Cerveza negra Steeleye",
+    "descripcion": "24 - bot. 12 l",
+    "precio": "18999",
+    "stock": 20,
+    "image": "https://img.icons8.com/wired/344/beer.png"
+  },
+  {
+    "_id": "63517efad6b18bbca6c1973e",
+    "nombre": "Vino Côte de Blaye",
+    "descripcion": "12 - bot. 75 cl",
+    "precio": "264999",
+    "stock": 17,
+    "image": "https://img.icons8.com/wired/344/wine-bottle.png"
+  },
+  {
+    "_id": "63517efad6b18bbca6c1973f",
+    "nombre": "Licor verde Chartreuse",
+    "descripcion": "750 cc por bot.",
+    "precio": "18999",
+    "stock": 69,
+    "image": "https://img.icons8.com/wired/344/alcohol.png"
+  },
+  {
+    "_id": "63517efad6b18bbca6c19740",
+    "nombre": "Café de Malasia",
+    "descripcion": "16 - latas 500 g",
+    "precio": "46999",
+    "stock": 17,
+    "image": "https://img.icons8.com/wired/344/cafe.png"
+  },
+  {
+    "_id": "63517efad6b18bbca6c19741",
+    "nombre": "Cerveza Laughing Lumberjack",
+    "descripcion": "24 - bot. 12 l",
+    "precio": "14999",
+    "stock": 52,
+    "image": "https://img.icons8.com/wired/344/beer.png"
+  },
+  {
+    "_id": "63517efad6b18bbca6c19742",
+    "nombre": "Cerveza Outback",
+    "descripcion": "24 - bot. 355 ml",
+    "precio": "15999",
+    "stock": 15,
+    "image": "https://img.icons8.com/wired/344/beer.png"
+  }
+]

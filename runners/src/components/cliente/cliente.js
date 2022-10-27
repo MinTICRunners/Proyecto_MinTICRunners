@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import Table from 'react-bootstrap/Table';
-import '/Users/fliarayoviana/Documents/MisionTic/Ciclo/Proyecto_MinTICRunners/runners/src/styles/styleCliente.css';
+//import Table from 'react-bootstrap/Table';
+import '../../styles/styleCliente.css';
 import Inicio from "../admin/inicio";
 import datos from './clientejson.json';
 
@@ -44,7 +44,7 @@ function Cliente()
                     <button onClick={modificacion} className="buttonCliente"> Modificar </button>
                     <button onClick={volver} className="buttonCliente"> Volver </button>
                 </div>
-    let imagen = <img src="../img/estrategia.jpg"></img>
+    let imagen = <img src="../img/estrategia.jpg" alt=""></img>
     
     let [barra, setBarra] = useState(init)    
     let [inicio, setInicio] = useState(imagen)
@@ -55,7 +55,7 @@ function Cliente()
         <div >
             {barra} 
             {inicio}
-            <Table striped bordered hover>
+            <table striped bordered hover>
                 <thead>
                     <tr>
                         <th>Nombres</th>
@@ -74,7 +74,7 @@ function Cliente()
                         )
             })} 
                     </tbody>
-                </Table>
+                </table>
             {modificar}        
         </div>
     )

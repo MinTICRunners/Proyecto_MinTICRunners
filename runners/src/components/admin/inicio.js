@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import '/Users/fliarayoviana/Documents/MisionTic/Ciclo/Proyecto_MinTICRunners/runners/src/styles/styleInicio.css'
+import '../../styles/styleInicio.css'
 import Cliente from "../cliente/cliente.js";
-import Admin from "./administrador";
+import Admin from "./admin";
 
 const Inicio = () => {
    
