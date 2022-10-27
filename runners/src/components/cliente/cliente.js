@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Table from 'react-bootstrap/Table';
 import '/Users/fliarayoviana/Documents/MisionTic/Ciclo/Proyecto_MinTICRunners/runners/src/styles/styleCliente.css';
 import Inicio from "../admin/inicio";
 import datos from './clientejson.json';
@@ -53,14 +54,27 @@ function Cliente()
     return(
         <div >
             {barra} 
-            {inicio}  
-            {visualizar.map( (elem, idx) => {
-                return(
-                    <div className="objetos" key={elem.id}>                        
-                       <strong> Objeto {idx+1} : </strong> {elem.nombre + " " + elem.apellido + " " + elem.edad + " "}
-                    </div>
-                )
+            {inicio}
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Numero documento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {visualizar.map( (elem, idx) => {
+                        return(
+                            <tr>
+                                <td> {elem.nombres} </td>
+                                <td> {elem.apellidos} </td>
+                                <td> {elem.numdoc} </td>
+                            </tr>
+                        )
             })} 
+                    </tbody>
+                </Table>
             {modificar}        
         </div>
     )
