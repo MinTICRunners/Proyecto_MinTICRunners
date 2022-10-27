@@ -1,4 +1,5 @@
-import { useState } from 'react';
+{
+  /*import { useState } from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import PropTypes from 'prop-types';
 import {
@@ -167,3 +168,4 @@ CustomerListResults.propTypes = {
 };
 
 export default Costumer;
+*/}

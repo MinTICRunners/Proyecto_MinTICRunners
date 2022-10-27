@@ -1,0 +1,26 @@
+[
+  {
+      "id":1018,
+      "nombre":"Jonier",
+      "apellido":"Porras",
+      "edad": 29,
+      "correo": "juan@juan.com",
+      "cc": 11564378
+  },
+  {
+      "id":1010,
+      "nombre":"Nicolas",
+      "apellido":"Linares",
+      "edad": 27,
+      "correo": "linares@juan.com",
+      "cc": 115648978
+  },
+  {
+      "id":2025,
+      "nombre":"Geraldine",
+      "apellido":"Martinez",
+      "edad": 10,
+      "correo": "martinez@juan.com",
+      "cc": 115643789
+  }
+]
