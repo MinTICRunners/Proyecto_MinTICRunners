@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import '../../styles/styleAdmin.css';
 import Inicio from "./inicio";
 import productData from "../Productos/productos.json";
+import list from "../Productos/listaVentas.json";
+import Table from "react-bootstrap/Table";
 
 function Admin () {
     
@@ -35,7 +37,47 @@ function Admin () {
     }
 
     function listarVentas(){
-        setListaProductos(listaProductos = []);
+        let suma = 0;
+        let visual =
+        <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Unidades</th>
+          </tr>
+        </thead>
+        <tbody>
+        
+          { 
+            list.map(
+              (datos,index)=>{
+                suma = suma + datos.precio
+                return(
+                  <tr>
+                    <td>{index}</td>
+                    <td>{datos.nombre}</td>
+                    <td>{datos.descripcion}</td>
+                    <td>{datos.precio}</td>
+                    <td>{datos.stock}</td>
+                  </tr>
+                );
+            }
+            )
+          }
+          <tr>
+                <td></td>
+                <td></td>
+                <td><b>La suma es: </b></td>
+                <td>{suma}</td>
+                <td></td>
+            </tr>
+            
+        </tbody>
+      </Table>
+        setListaProductos(listaProductos = visual);
     }
 
     let barraHtml = <div className="blockAdmin">

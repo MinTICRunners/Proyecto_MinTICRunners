@@ -1,5 +1,7 @@
 import './App.css';
 import Inicio from './components/admin/inicio';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
