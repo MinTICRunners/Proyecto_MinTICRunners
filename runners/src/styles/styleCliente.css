@@ -1,0 +1,43 @@
+.buttonCliente {
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    padding: 1.5%;
+}
+.blockCliente {
+    background-color: black;
+}
+
+.objetos {
+    margin-top: 15%;
+    font-size: 30px;
+}
+
+table {
+    width: 100%;
+    border: 1px solid #000;
+ }
+ th, td {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #000;
+ }
+ th {
+    background: #eee;
+ }
+
+ .buttonComprar {
+    
+    font-size: 25px;
+    border-radius: 12px;
+    background-color: rgb(27, 201, 201);
+    color: white;
+    border: 0px solid;
+    padding: 3%;
+    margin-left: 2%;
+    margin-right: 2%;
+    font-size: 15px;
+    
+
+ }
