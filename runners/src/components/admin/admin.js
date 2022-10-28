@@ -101,7 +101,7 @@ function Admin () {
           <tr>
                 <td></td>
                 <td></td>
-                <td><b>La suma es: </b></td>
+                <td><b>Total Ventas: </b></td>
                 <td>{suma}</td>
                 <td></td>
             </tr>

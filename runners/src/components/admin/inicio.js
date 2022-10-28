@@ -6,7 +6,7 @@ import Admin from "./admin";
 const Inicio = () => {
    
     let init = <div>
-                    <h1> Página de Inicio </h1>
+                    <h1> Mintic Runners </h1>
                     <button onClick={vistaCliente} className="buttonInicio"> Cliente </button>
                     <button onClick={vistaAdmin} className="buttonInicio"> Adminitrador </button>
                 </div> 
