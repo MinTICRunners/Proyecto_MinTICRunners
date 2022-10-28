@@ -26,3 +26,18 @@ table {
  th {
     background: #eee;
  }
+
+ .buttonComprar {
+    
+    font-size: 25px;
+    border-radius: 12px;
+    background-color: rgb(27, 201, 201);
+    color: white;
+    border: 0px solid;
+    padding: 3%;
+    margin-left: 2%;
+    margin-right: 2%;
+    font-size: 15px;
+    
+
+ }
