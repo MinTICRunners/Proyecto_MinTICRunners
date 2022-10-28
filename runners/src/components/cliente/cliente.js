@@ -3,6 +3,9 @@ import '../../styles/styleCliente.css';
 import Inicio from "../admin/inicio";
 import datos from './clientejson.json';
 import productData from "../Productos/productos.json";
+import Table from "react-bootstrap/esm/Table";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 
 
@@ -47,19 +50,57 @@ function Cliente()
 
     function visualizacion () {
         setInicio(inicio="")
-        setvisualizar(visualizar=datos)
+        setvisualizar(visualizar = [])
         setModificar(modificar=[])
         setListaProductos(listaProductos ="");
     }
 
     function modificacion () {
         let mod = 
-        <div>
-            <div> <label> Nombre </label> <input type="text"></input> </div>
-            <div> <label> Apellido </label> <input type="text"></input> </div>
-            <div> <label> Edad </label> <input type="number"></input></div>
-            <button> Guardar </button>
-        </div>
+          <Form className="ingadmin">
+            <Form.Group className="ingadmin" >
+              <Form.Label>Tipo de Documento</Form.Label>
+              <Form.Control type="cliente" placeholder="CC,CE,TI" />
+            </Form.Group>
+            <Form.Group className="ingadmin" >
+              <Form.Label>Numero de Documento</Form.Label>
+              <Form.Control type="cliente" placeholder="0000000000 " />
+            </Form.Group>
+            <Form.Group className="ingadmin" >
+              <Form.Label>Apellidos</Form.Label>
+              <Form.Control type="cliente" placeholder="" />
+            </Form.Group>
+            <Form.Group className="ingadmin" >
+              <Form.Label>Nombres</Form.Label>
+              <Form.Control type="cliente" placeholder="" />
+            </Form.Group>
+            <Form.Group className="ingadmin" >
+              <Form.Label>Ciudad</Form.Label>
+              <Form.Control type="cliente" placeholder="" />
+            </Form.Group>
+            <Form.Group className="ingadmin" >
+              <Form.Label>Direccion</Form.Label>
+              <Form.Control type="cliente" placeholder="" />
+            </Form.Group>
+            <Form.Group className="ingadmin" controlId="exampleForm.ControlInput1">
+              <Form.Label>Telefono</Form.Label>
+              <Form.Control type="cliente" placeholder="" />
+            </Form.Group>
+            <Form.Group className="ingadmin" controlId="exampleForm.ControlInput1">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="cliente" placeholder="@ejemplo.com" />
+            </Form.Group>
+            <p> </p>
+            <Button className="botonadmin" variant="primary" type="submit">
+                Agregar
+            </Button>
+            <Button className="botonadmin" variant="primary" type="submit">
+                Modificar
+            </Button>
+            <Button className="botonadmin" variant="primary" type="submit">
+                Eliminar
+            </Button>
+          </Form>
         setModificar(modificar=mod)
         setInicio(inicio="")
         setvisualizar(visualizar=[])
@@ -86,24 +127,34 @@ function Cliente()
             {barra} 
             {inicio}
             {listaProductos}
-            <table striped bordered hover>
-                <thead>
-                    <tr>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    {visualizar.map( (elem, idx) => {
-                        return(
-                            <tr>
-                                <td> {elem.nombres} </td>
-                                <td> {elem.apellidos} </td>
-                                <td> {elem.numdoc} </td>
-                            </tr>
-                        )
-            })} 
-                    </tbody>
-                </table>
+        <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Numero TI</th>
+            <th>Telefono</th>
+          </tr>
+        </thead>
+        <tbody>
+          { 
+            datos.map(
+              (datos,index)=>{
+                return(
+                  <tr>
+                    <td>{index}</td>
+                    <td>{datos.nombres}</td>
+                    <td>{datos.apellidos}</td>
+                    <td>{datos.numdoc}</td>
+                    <td>{datos.telefono}</td>
+                  </tr>
+                );
+            }
+            )
+        }
+        </tbody>
+      </Table>
             {modificar}        
         </div>
     )

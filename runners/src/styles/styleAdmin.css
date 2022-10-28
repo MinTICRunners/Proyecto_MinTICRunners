@@ -65,3 +65,12 @@ table.tableLista tr.even {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: medium;
 }
+.ingadmin{
+    text-align: center;
+    width: 45%;
+    margin: 0 auto;
+ }
+
+ .botonadmin{
+    margin: 10px
+ }

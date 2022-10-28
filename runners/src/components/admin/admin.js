@@ -4,6 +4,8 @@ import Inicio from "./inicio";
 import productData from "../Productos/productos.json";
 import list from "../Productos/listaVentas.json";
 import Table from "react-bootstrap/Table";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button"
 
 function Admin () {
     
@@ -33,7 +35,36 @@ function Admin () {
     }
 
     function modificarProductos(){
-        setListaProductos(listaProductos = []);
+        let mod = 
+          <Form className="ingadmin">
+            <Form.Group className="ingadmin" >
+              <Form.Label>Nombre</Form.Label>
+              <Form.Control type="cliente" placeholder="" />
+            </Form.Group>
+            <Form.Group className="ingadmin" >
+              <Form.Label>Descripcion</Form.Label>
+              <Form.Control type="cliente" placeholder="" />
+            </Form.Group>
+            <Form.Group className="ingadmin" >
+              <Form.Label>Precio</Form.Label>
+              <Form.Control type="cliente" placeholder="" />
+            </Form.Group>
+            <Form.Group className="ingadmin" controlId="exampleForm.ControlInput1">
+              <Form.Label>Stock</Form.Label>
+              <Form.Control type="cliente" placeholder="" />
+            </Form.Group>
+            <p> </p>
+            <Button className="botonadmin" variant="primary" type="submit">
+                Agregar
+            </Button>
+            <Button className="botonadmin" variant="primary" type="submit">
+                Modificar
+            </Button>
+            <Button className="botonadmin" variant="primary" type="submit">
+                Eliminar
+            </Button>
+          </Form>
+        setListaProductos(listaProductos = mod);
     }
 
     function listarVentas(){

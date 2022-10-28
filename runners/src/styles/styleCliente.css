@@ -38,6 +38,14 @@ table {
     margin-left: 2%;
     margin-right: 2%;
     font-size: 15px;
-    
+ }
+ 
+ .ingadmin{
+    text-align: center;
+    width: 45%;
+    margin: 0 auto;
+ }
 
+ .botonadmin{
+    margin: 10px
  }
