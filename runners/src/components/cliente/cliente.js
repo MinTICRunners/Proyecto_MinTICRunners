@@ -49,10 +49,39 @@ function Cliente()
     }
 
     function visualizacion () {
-        setInicio(inicio="")
-        setvisualizar(visualizar = [])
+        let visual =
+        <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Numero TI</th>
+            <th>Telefono</th>
+          </tr>
+        </thead>
+        <tbody>
+          { 
+            datos.map(
+              (datos,index)=>{
+                return(
+                  <tr>
+                    <td>{index}</td>
+                    <td>{datos.nombres}</td>
+                    <td>{datos.apellidos}</td>
+                    <td>{datos.numdoc}</td>
+                    <td>{datos.telefono}</td>
+                  </tr>
+                );
+            }
+            )
+        }
+        </tbody>
+      </Table>
+        setvisualizar(visualizar = visual)
         setModificar(modificar=[])
-        setListaProductos(listaProductos ="");
+        setInicio(inicio="")
+        setListaProductos(listaProductos = "");
     }
 
     function modificacion () {
@@ -126,35 +155,8 @@ function Cliente()
         <div >
             {barra} 
             {inicio}
+            {visualizar}
             {listaProductos}
-        <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Nombre</th>
-            <th>Apellidos</th>
-            <th>Numero TI</th>
-            <th>Telefono</th>
-          </tr>
-        </thead>
-        <tbody>
-          { 
-            datos.map(
-              (datos,index)=>{
-                return(
-                  <tr>
-                    <td>{index}</td>
-                    <td>{datos.nombres}</td>
-                    <td>{datos.apellidos}</td>
-                    <td>{datos.numdoc}</td>
-                    <td>{datos.telefono}</td>
-                  </tr>
-                );
-            }
-            )
-        }
-        </tbody>
-      </Table>
             {modificar}        
         </div>
     )
