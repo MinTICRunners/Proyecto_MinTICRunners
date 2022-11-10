@@ -1,30 +1,31 @@
-import React, {useState} from "react";
-import '../../styles/styleInicio.css'
-import Cliente from "../cliente/cliente.js";
-import Admin from "./admin";
+import React, { useState } from "react";
+import "../../styles/styleInicio.css";
+import { Navigate } from "react-router-dom";
 
 const Inicio = () => {
-   
-    let init = <div>
-                    <h1> Mintic Runners </h1>
-                    <button onClick={vistaCliente} className="buttonInicio"> Cliente </button>
-                    <button onClick={vistaAdmin} className="buttonInicio"> Adminitrador </button>
-                </div> 
+  const [redirect, setRedirect] = useState(false);
+  return (
+    <div>
+      {!redirect ? (
+        <>
+          <h1> Mintic Runners </h1>
+          <button
+            onClick={() => setRedirect("cliente")}
+            className="buttonInicio"
+          >
+            {" "}
+            Cliente{" "}
+          </button>
+          <button onClick={() => setRedirect("admin")} className="buttonInicio">
+            {" "}
+            Adminitrador{" "}
+          </button>
+        </>
+      ) : (
+        <Navigate replace to={"/" + redirect} />
+      )}
+    </div>
+  );
+};
 
-    let [estado, setEstado] = useState(init)
-    
-    function vistaCliente(){
-       setEstado(estado = <Cliente />)       
-    }
-    function vistaAdmin(){
-        setEstado(estado = <Admin/>)  
-    }    
-
-    return(
-        <div>
-            {estado}
-        </div>        
-    )
-}
-
-export default Inicio
+export default Inicio;
