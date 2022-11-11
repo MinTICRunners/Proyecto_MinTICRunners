@@ -3,9 +3,9 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from "react-router-dom";
 
-import Inicio from './components/admin/Inicio';
-import Admin from './components/admin/Admin';
-import Clientes from './components/cliente/Cliente';
+import Inicio from './components/admin/inicio.js';
+import Admin from './components/admin/admin.js';
+import Clientes from './components/cliente/cliente.js';
 
 const App = () => {
   return (

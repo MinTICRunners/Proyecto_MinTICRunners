@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import '../../styles/styleAdmin.css';
-import Inicio from "./Inicio.js"
+import Inicio from "./inicio.js"
 import productData from "../Productos/productos.json";
 import list from "../Productos/listaVentas.json";
 import Table from "react-bootstrap/Table";
