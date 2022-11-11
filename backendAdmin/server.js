@@ -17,6 +17,11 @@ app.get (pathName, async (req, res) => {
     res.send(await productosGet.productosGetExport())
 })
 
+app.get (pathName + "/ventas", async (req, res) => {
+    console.log("Peticion get");
+    res.send(await productosGet.ventasGetExport())
+})
+
 app.get (pathName + "/:id", async (req, res) => {
     console.log("Peticion getById");
     let id = req.params.id

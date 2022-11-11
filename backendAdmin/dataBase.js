@@ -20,9 +20,9 @@ const getClient = async () =>{
 
 }
 
-const getCollection = async (client) =>{
+const getCollection = async (collectionUser, client) =>{
     const db = client.db("ecommerce")
-    const collection = await db.collection("productos")
+    const collection = await db.collection(collectionUser)
     return collection
 }
 
