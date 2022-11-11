@@ -65,8 +65,10 @@ const confirmarCarrito2 = async (id, producto) => {
     const { collection, client } = await getConexiones("ventas")
     productoid = await collection.findOne({"_id":parseInt(id)})
 
+    //Si el producto si existe
     if (productoid != null) {
         suma = 1;
+    //Si el producto no existe
     }else{
         await collection.insertOne(producto)
     }
