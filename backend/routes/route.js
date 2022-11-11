@@ -1,10 +1,10 @@
-import express from 'express';
-import { consultar } from '../controllers/control.js';
+const express = require('express');
 
 const rutas = express.Router();
 
-router.get('/consultar', function(pet, res){
-    consultar(pet,res);
+router.get('/', (pet, res) => {
+    console.log("Peticion get");
+    res.send("Hola")
 })
 
 //agregue aquí sus rutas :)
