@@ -1,5 +1,6 @@
 const getMongo = require("../dataBase.js");
 
+//Get productos
 const productosGet = async () => {
     const { collection, client } = await getConexiones("productos")
     const productos = await collection.find({}).toArray()
@@ -7,6 +8,7 @@ const productosGet = async () => {
     return productos
 }
 
+//Get ventas
 const ventasGet = async () => {
     const { collection, client } = await getConexiones("ventas")
     const productos = await collection.find({}).toArray()
@@ -14,6 +16,7 @@ const ventasGet = async () => {
     return productos
 }
 
+//Post productos
 const productosSet = async (producto) => {
     const { collection, client } = await getConexiones("productos")
     await collection.insertOne(producto)
@@ -21,6 +24,7 @@ const productosSet = async (producto) => {
     return producto
 }
 
+//Delete productos
 const productoDelete = async (id) => {
     let productoid;
     const { collection, client } = await getConexiones("productos")
@@ -29,6 +33,7 @@ const productoDelete = async (id) => {
     return productoid;
 }
 
+//FindById productos
 const productoGetById = async (id) => {
     let productoid;
     const { collection, client } = await getConexiones("productos")
@@ -37,6 +42,7 @@ const productoGetById = async (id) => {
     return productoid;
 }
 
+//Put productos
 const updateProductos = async (id, data) => {
     const { collection, client } = await getConexiones("productos")
     const filter = {"_id":parseInt(id)}
@@ -47,7 +53,7 @@ const updateProductos = async (id, data) => {
     return productoModificado;
   }
 
-
+//Modificar stock
 const modificarStock = async (id, data) => {
     const { collection, client } = await getConexiones("productos")
     const filter = {"_id":parseInt(id)}
@@ -58,12 +64,14 @@ const modificarStock = async (id, data) => {
     return productoModificado;
 }
 
+//Crear conexiones
 async function getConexiones(collectionUser) {
     const client = await getMongo.getClientnExport()
     const collection = await getMongo.getCollectionExport(collectionUser, client)
     return { collection, client }
 }
 
+//Exportaciones
 module.exports.productosGetExport = productosGet;
 module.exports.ventasGetExport = ventasGet;
 module.exports.modificarStockExport = modificarStock;
