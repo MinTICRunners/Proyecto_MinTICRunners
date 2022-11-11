@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require('cors');
 
-const productosGet = require("./controllers/control.js");
+const productosGet = require("./Service/adminService.js");
 
 const app = express(); 
 const port = 5000;
