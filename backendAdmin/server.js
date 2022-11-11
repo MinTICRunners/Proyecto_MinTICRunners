@@ -28,15 +28,32 @@ app.get (pathName + "/:id", async (req, res) => {
     console.log(id)
     let respuesta = await productosGet.productoGetByIdExport(id)
     console.log(respuesta)
-    res.send(respuesta)
+    if (respuesta != null){
+        res.send(respuesta)
+    }else{
+        res.send("Producto No Existe")
+    }
+    
 })
 
 app.post (pathName, async (req, res) => {
     console.log("PeticionPost");
     let producto = await productosGet.productosSetExport(req.body)
     res.send({"mensaje":"Guardado exitoso", "producto":producto})
-    console.log("PeticionPost");
 }) 
+
+app.put(pathName + '/:id', async (req, res) => {
+    console.log("PeticionPut");
+    let respuesta = await productosGet.updateProductosExport(req.params.id, req.body);
+    res.send({"mensaje":"Actualizado exitoso", "respuesta":respuesta})
+})
+
+app.put(pathName + '/modstock/:id', async (req, res) => {
+    console.log("PeticionPutStock");
+    let respuesta = await productosGet.modificarStockExport(req.params.id, req.body);
+    res.send({"mensaje":"Actualizado exitoso", "respuesta":respuesta})
+})
+
 
 app.delete (pathName + "/:id", async (req, res) => {
     console.log("Peticion delete")
