@@ -27,8 +27,14 @@
     max-height: 280px;
 }
 
-img.productImg{
-    width: 100px;
+#productImg{
+    width: 130px;
+}
+
+#cardStyle{
+    width: 18rem;
+    float: left;
+    margin: 0.5%;
 }
 
 table.tableLista{

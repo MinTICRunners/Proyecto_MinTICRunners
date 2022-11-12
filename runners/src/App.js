@@ -1,9 +1,9 @@
 import React from "react";
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "../node_modules/bootstrap/dist/css/bootstrap.css"
 import { Routes, Route } from "react-router-dom";
 
-import Inicio from './components/admin/inicio.js';
+import {Inicio} from './components/inicio.js';
 import Admin from './components/admin/admin.js';
 import Clientes from './components/cliente/cliente.js';
 

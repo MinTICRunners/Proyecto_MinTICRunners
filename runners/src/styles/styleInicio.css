@@ -13,3 +13,20 @@ body {
     margin-left: 2%;
     margin-right: 2%;
 }
+
+#colPers{
+    background-color: lightsteelblue;
+    margin-top: 4%;
+    padding: 2%;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 18px;
+}
+
+#imagenLogin{
+    width: 150px;
+}
+
+::placeholder{
+    font-size: 15px;
+}

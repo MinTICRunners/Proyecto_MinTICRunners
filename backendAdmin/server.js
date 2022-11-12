@@ -12,7 +12,7 @@ app.use(express.json());
 const pathName = "/admin"
 
 //Get lista productos
-app.get (pathName, async (req, res) => {
+app.get (pathName + "/listaproductos", async (req, res) => {
     console.log("Peticion get");
     res.send(await productosGet.productosGetExport())
 })

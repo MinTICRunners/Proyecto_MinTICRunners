@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../styles/styleCliente.css";
 import datos from "./clientejson.json";
-import productData from "../Productos/productos.json";
+//import productData from "../Productos/productos.json";
 import Table from "react-bootstrap/esm/Table";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -10,6 +10,9 @@ import { Navigate } from "react-router-dom";
 import Carrito from "./Carrito";
 
 function Cliente() {
+
+  let url="http://localhost:5000/admin"
+
   const [ProductosEnCarrito, setProductosEnCarrito] = useState([]);
   const agregarItemACarrito = (producto) => {
     console.log("producto ", producto);
@@ -19,7 +22,44 @@ function Cliente() {
 
   function listarProductos() {
     // Se crea la presentación de los datos.
-    return productData.map((elem, idx) => {
+
+    fetch(url + '/listaproductos',{
+      method:'get',
+      headers:{'Content-Type':'application/json'}
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      productShow(data)
+    })    
+
+    function productShow(productData){
+      let productShow = productData.map((elem,idx)=>{
+        return(
+            <div class="card" id="cardStyle">
+              <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                  <img src={elem.image} alt={elem.nombre} class="card-img-top" id="productImg"/>
+                </div>
+                <div class="col"></div>
+              </div>
+              <div class="card-body">
+                <div class="card-title"> {elem.nombre} </div>
+                <div class="card-text"> Precio: $ {elem.precio} </div>
+                <div class="card-text"> Stock: {elem.stock} </div>
+                <div>
+                  <button type="button" class="btn btn-primary"> Agregar </button>
+                  <button type="button" class="btn btn-warning"> Comprar </button>
+                </div>
+              </div>
+            </div>
+        )
+    })
+
+    setVistaActual(VistaActual = productShow);
+    }
+    /*return productData.map((elem, idx) => {
       return (
         <div className="productDiv" key={idx}>
           <img src={elem.image} alt={elem.nombre} className="productImg" />
@@ -38,7 +78,7 @@ function Cliente() {
           </button>
         </div>
       );
-    });
+    });*/
   }
 
   const inicioImagen = <img src="../img/estrategia.jpg" alt="" />;
@@ -117,54 +157,40 @@ function Cliente() {
     </Form>
   );
 
-  const [VistaActual, setVistaActual] = useState(<div />);
+  
+
+  let barraHtml = <div className="blockCliente">
+  <button onClick={() => setVistaActual(inicioImagen)} className="buttonCliente"> Inicio </button>
+  <button onClick={listarProductos} className="buttonCliente"> Lista Productos </button>
+  <button onClick={() => setVistaActual(visualizacion)} className="buttonCliente"> Visualizar </button>
+  <button
+    onClick={() => setVistaActual(modificacion)}
+    className="buttonCliente"
+  >
+    {" "}
+    Modificar{" "}
+  </button>
+  <button
+    onClick={() => setVistaActual(<Navigate replace to={"/"} />)}
+    className="buttonCliente"
+  >
+    {" "}
+    Volver{" "}
+  </button>
+  <button
+    onClick={() => setVistaActual(Carrito)}
+    className="buttonCliente"
+  >
+    {" "}
+    Carrito {ProductosEnCarrito.length}
+  </button>
+</div>
+
+  let [VistaActual, setVistaActual] = useState([]);
 
   return (
     <div>
-      <div className="blockCliente">
-        <button
-          onClick={() => setVistaActual(inicioImagen)}
-          className="buttonCliente"
-        >
-          {" "}
-          Inicio{" "}
-        </button>
-        <button
-          onClick={() => setVistaActual(listarProductos())}
-          className="buttonCliente"
-        >
-          {" "}
-          Lista Productos{" "}
-        </button>
-        <button
-          onClick={() => setVistaActual(visualizacion)}
-          className="buttonCliente"
-        >
-          {" "}
-          Visualizar{" "}
-        </button>
-        <button
-          onClick={() => setVistaActual(modificacion)}
-          className="buttonCliente"
-        >
-          {" "}
-          Modificar{" "}
-        </button>
-        <button
-          onClick={() => setVistaActual(<Navigate replace to={"/"} />)}
-          className="buttonCliente"
-        >
-          {" "}
-          Volver{" "}
-        </button>
-        <button
-          onClick={() => setVistaActual(Carrito)}
-          className="buttonCliente"
-        >
-          {" "}
-          Carrito {ProductosEnCarrito.length}
-        </button>
-      </div>
+      {barraHtml}
       {VistaActual}
     </div>
   );
