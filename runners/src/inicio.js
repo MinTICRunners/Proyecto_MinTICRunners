@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../styles/styleInicio.css";
+import "./styles/styleInicio.css";
 import { Navigate } from "react-router-dom";
 
 const Inicio = () => {

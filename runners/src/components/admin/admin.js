@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import '../../styles/styleAdmin.css';
-import Inicio from "./inicio.js"
-import productData from "../Productos/productos.json";
+import Inicio from "../../inicio.js"
 import Table from "react-bootstrap/Table";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
