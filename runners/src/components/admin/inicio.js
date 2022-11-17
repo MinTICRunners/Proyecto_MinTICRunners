@@ -16,7 +16,9 @@ const Inicio = () => {
             {" "}
             Cliente{" "}
           </button>
-          <button onClick={() => setRedirect("admin")} className="buttonInicio">
+          <button 
+          onClick={() => setRedirect("admin")} 
+          className="buttonInicio">
             {" "}
             Adminitrador{" "}
           </button>

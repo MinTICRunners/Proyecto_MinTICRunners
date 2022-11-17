@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../styles/styleCliente.css";
 import datos from "./clientejson.json";
 import productData from "../Productos/productos.json";
@@ -10,6 +10,24 @@ import { Navigate } from "react-router-dom";
 import Carrito from "./Carrito";
 
 function Cliente() {
+  const [datosProductos, setDatosProductos] = useState([{}])
+  const [datosClientes, setDatosClientes] = useState([{}])
+
+   useEffect(
+    ()=> {
+      fetch("http://localhost:5000/admin")
+      .then(
+        (response)=>(response.json())
+      )
+      .then(
+        (response)=>{
+          setDatosProductos(response)
+        }
+      ) 
+    },[]
+   )
+
+
   const [ProductosEnCarrito, setProductosEnCarrito] = useState([]);
   const agregarItemACarrito = (producto) => {
     console.log("producto ", producto);
@@ -19,12 +37,12 @@ function Cliente() {
 
   function listarProductos() {
     // Se crea la presentación de los datos.
-    return productData.map((elem, idx) => {
+    return datosProductos.map((elem, idx) => {
       return (
         <div className="productDiv" key={idx}>
-          <img src={elem.image} alt={elem.nombre} className="productImg" />
+          <img src={elem.image} className="productImg" />
           <div className="productPName"> {elem.nombre} </div>
-          <div className="productPPrice"> Precio: $ {elem.precio} </div>
+          <div className="productPPrice"> Precio: $ {new Intl.NumberFormat("de-DE").format(`${elem.precio}`)} </div>
           <div className="productPStock">
             <p> Stock: {elem.stock} </p>
           </div>
@@ -41,10 +59,12 @@ function Cliente() {
     });
   }
 
-  const inicioImagen = <img src="../img/estrategia.jpg" alt="" />;
+  const inicioImagen = () => (
+  <img src="../../img/estrategia.jpg" alt="" />
+  )
 
-  const visualizacion = (
-    <Table striped bordered hover>
+  const visualizacion = () => (
+    <Table striped bordered hover variant="dark">
       <thead>
         <tr>
           <th>#</th>
@@ -55,7 +75,8 @@ function Cliente() {
         </tr>
       </thead>
       <tbody>
-        {datos.map((datos, index) => {
+        {
+        datos.map((datos, index) => {
           return (
             <tr>
               <td>{index}</td>
@@ -70,7 +91,7 @@ function Cliente() {
     </Table>
   );
 
-  const modificacion = (
+  const modificacion = () => (
     <Form className="ingadmin">
       <Form.Group className="ingadmin">
         <Form.Label>Tipo de Documento</Form.Label>
@@ -122,48 +143,48 @@ function Cliente() {
   return (
     <div>
       <div className="blockCliente">
-        <button
+      <Button variant="outline-dark"
           onClick={() => setVistaActual(inicioImagen)}
           className="buttonCliente"
         >
           {" "}
           Inicio{" "}
-        </button>
-        <button
+          </Button>
+        <Button variant="outline-dark"
           onClick={() => setVistaActual(listarProductos())}
           className="buttonCliente"
         >
           {" "}
           Lista Productos{" "}
-        </button>
-        <button
+          </Button>
+        <Button variant="outline-dark"
           onClick={() => setVistaActual(visualizacion)}
           className="buttonCliente"
         >
           {" "}
           Visualizar{" "}
-        </button>
-        <button
+          </Button>
+        <Button variant="outline-dark"
           onClick={() => setVistaActual(modificacion)}
           className="buttonCliente"
         >
           {" "}
           Modificar{" "}
-        </button>
-        <button
+          </Button>
+        <Button variant="outline-dark"
           onClick={() => setVistaActual(<Navigate replace to={"/"} />)}
           className="buttonCliente"
         >
           {" "}
           Volver{" "}
-        </button>
-        <button
+          </Button>
+        <Button variant="outline-dark"
           onClick={() => setVistaActual(Carrito)}
           className="buttonCliente"
         >
           {" "}
           Carrito {ProductosEnCarrito.length}
-        </button>
+          </Button>
       </div>
       {VistaActual}
     </div>
