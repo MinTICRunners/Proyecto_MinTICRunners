@@ -68,6 +68,7 @@ function Admin () {
 
     const InicioImagen = () => (
       <img src="../../img/estrategia.jpg" alt="hi" />
+      
       )
 
     const ModificarProductos = () => (
