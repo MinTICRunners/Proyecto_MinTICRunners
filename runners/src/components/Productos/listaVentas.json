@@ -1,0 +1,82 @@
+[
+    {
+      "_id": "63517efad6b18bbca6c19739",
+      "nombre": "Té Dharamsala",
+      "descripcion": "10 cajas x 20 bolsas",
+      "precio": 18999,
+      "stock": 15,
+      "image": ""
+    },
+    {
+      "_id": "63517efad6b18bbca6c1973a",
+      "nombre": "Cerveza tibetana Barley",
+      "descripcion": "24 - bot. 12 l",
+      "precio": 19999,
+      "stock": 4,
+      "image": ""
+    },
+    {
+      "_id": "63517efad6b18bbca6c1973b",
+      "nombre": "Refresco Guaraná Fantástica",
+      "descripcion": "12 - latas 355 ml",
+      "precio": 5999,
+      "stock": 7,
+      "image": ""
+    },
+    {
+      "_id": "63517efad6b18bbca6c1973c",
+      "nombre": "Cerveza Sasquatch",
+      "descripcion": "24 - bot. 12 l",
+      "precio": 14999,
+      "stock": 2,
+      "image": ""
+    },
+    {
+      "_id": "63517efad6b18bbca6c1973d",
+      "nombre": "Cerveza negra Steeleye",
+      "descripcion": "24 - bot. 12 l",
+      "precio": 18999,
+      "stock": 1,
+      "image": ""
+    },
+    {
+      "_id": "63517efad6b18bbca6c1973e",
+      "nombre": "Vino Côte de Blaye",
+      "descripcion": "12 - bot. 75 cl",
+      "precio": 264999,
+      "stock": 7,
+      "image": ""
+    },
+    {
+      "_id": "63517efad6b18bbca6c1973f",
+      "nombre": "Licor verde Chartreuse",
+      "descripcion": "750 cc por bot.",
+      "precio": 18999,
+      "stock": 47,
+      "image": ""
+    },
+    {
+      "_id": "63517efad6b18bbca6c19740",
+      "nombre": "Café de Malasia",
+      "descripcion": "16 - latas 500 g",
+      "precio": 46999,
+      "stock": 12,
+      "image": ""
+    },
+    {
+      "_id": "63517efad6b18bbca6c19741",
+      "nombre": "Cerveza Laughing Lumberjack",
+      "descripcion": "24 - bot. 12 l",
+      "precio": 14999,
+      "stock": 31,
+      "image": ""
+    },
+    {
+      "_id": "63517efad6b18bbca6c19742",
+      "nombre": "Cerveza Outback",
+      "descripcion": "24 - bot. 355 ml",
+      "precio": 15999,
+      "stock": 18,
+      "image": ""
+    }
+  ]
