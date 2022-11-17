@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/styleCliente.css";
 import datos from "./clientejson.json";
-import productData from "../Productos/productos.json";
 import Table from "react-bootstrap/esm/Table";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -11,7 +10,6 @@ import Carrito from "./Carrito";
 
 function Cliente() {
   const [datosProductos, setDatosProductos] = useState([{}])
-  const [datosClientes, setDatosClientes] = useState([{}])
 
    useEffect(
     ()=> {
