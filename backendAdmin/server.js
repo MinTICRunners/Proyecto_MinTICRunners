@@ -61,7 +61,7 @@ app.put(pathName + '/modstock/:id', async (req, res) => {
 
 
 //Delete productos
-app.delete (pathName + "/:id", async (req, res) => {
+app.delete (pathName + '/:id', async (req, res) => {
     console.log("Peticion delete")
     let productoEliminado = await productosGet.productosDeleteExport(req.params.id)
     res.send({"mensaje":"Eliminado Exitoso", "producto":productoEliminado})
