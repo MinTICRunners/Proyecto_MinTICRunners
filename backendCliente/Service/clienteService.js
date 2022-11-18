@@ -18,10 +18,15 @@ const productosCarrito = async () => {
 
 //Post productos carrito
 const productosSet = async (producto) => {
-    const { collection, client } = await getConexiones("carrito")
-    await collection.insertOne(producto)
-    await getMongo.closeClientExport(client)
-    return producto
+    try {
+        const { collection, client } = await getConexiones("carrito")
+        try{ await collection.insertOne(producto)}
+        catch(err){ console.log(err) }
+        await getMongo.closeClientExport(client)
+        return producto
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 //Suma del carrito (Sin terminar)
@@ -37,12 +42,11 @@ const totalCarrito = async () => {
 
 //Borar productos del carrito
 const carritoDeleteProductos = async (id) => {
-    let productoid;
 
-    const { collection, client } = await getConexiones("productos")
-    productoid = await collection.deleteMany({"_id":parseInt(id)});
+    const { collection, client } = await getConexiones("carrito")
+    await collection.deleteMany({"_id":parseInt(id)});
     await getMongo.closeClientExport(client)
-    return productoid;
+    return id;
 }
 
 //Confirmacion Carrito (Sin terminar)
