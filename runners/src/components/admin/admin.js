@@ -5,7 +5,6 @@ import Table from "react-bootstrap/Table";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Navigate } from "react-router-dom";
-import { Redirect } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 function Admin () {
@@ -13,7 +12,6 @@ function Admin () {
   const [datosVentas, setDatosVentas] = useState([{}])
   const [datosProductos, setDatosProductos] = useState([{}])
   const [datosProductoUnico, setDatosProductoUnico] = useState([{}])
-  const [modificarProducto, setModificarProducto] = useState({nombre:"", descripcion:"", precio:"", stock:""})
 
   const url = "http://localhost:5000/admin"
   let navigate = useNavigate();
@@ -51,13 +49,12 @@ function Admin () {
 
     let idEliminar = parseInt(id)
 
+    alert("Producto eliminado")
+    
     let response = await fetch(`${url}/${idEliminar}`, {
       method: 'DELETE'
     }
     )
-    if (response.status === 200) {
-      alert("Producto eliminado")
-    }
    }
 
    const VerProductoById = (id) => {
