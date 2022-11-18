@@ -79,33 +79,7 @@ function Cliente() {
   <img src="../../img/estrategia.jpg" alt="" />
   )
 
-  const Carrito = () => (
-    <Table striped bordered hover>
-    <thead>
-      <tr>
-        <th>Imagen</th>
-        <th>Cantidad</th>
-        <th>Apellidos</th>
-        <th>Numero TI</th>
-        <th>Telefono</th>
-      </tr>
-    </thead>
-    <tbody>
-      {
-      datosProductos.map((productoEnCarrito, index) => {
-        return (
-          <tr>
-            <td>{productoEnCarrito.image}</td>
-            <td>{1}</td>
-            <td>{productoEnCarrito.nombre}</td>
-            <td>{productoEnCarrito.precio}</td>
-            <td>{1 * productoEnCarrito.precio}</td>
-          </tr>
-        );
-      })}
-    </tbody>
-  </Table>
-  );
+  const mostrarComprasCliente = () => {}
 
   const Carrito2 = () => {
     return datosCarrito.map((elem, idx) => {
@@ -122,6 +96,9 @@ function Cliente() {
       );
     })
   }
+
+
+
 
   
 
@@ -172,7 +149,7 @@ function Cliente() {
     </Form>
   );
 
-  const [VistaActual, setVistaActual] = useState(<div />);
+  const [VistaActual, setVistaActual] = useState([]);
 
   return (
     <div>
@@ -191,19 +168,19 @@ function Cliente() {
           {" "}
           Productos{" "}
           </Button>
-        <Button variant="outline-dark"
-          onClick={() => setVistaActual()}
+          <Button variant="outline-dark"
+          onClick={() => setVistaActual(Carrito2 )}
           className="buttonCliente"
         >
           {" "}
-          Visualizar{" "}
+          Carrito {""}
           </Button>
         <Button variant="outline-dark"
-          onClick={() => setVistaActual()}
+          onClick={() => setVistaActual(mostrarComprasCliente)}
           className="buttonCliente"
         >
           {" "}
-          Modificar{" "}
+          Visualizar Compras{" "}
           </Button>
         <Button variant="outline-dark"
           onClick={() => setVistaActual(<Navigate replace to={"/"} />)}
@@ -211,13 +188,6 @@ function Cliente() {
         >
           {" "}
           Volver{" "}
-          </Button>
-        <Button variant="outline-dark"
-          onClick={() => setVistaActual(Carrito2)}
-          className="buttonCliente"
-        >
-          {" "}
-          Carrito {""}
           </Button>
       </div>
       {VistaActual}
