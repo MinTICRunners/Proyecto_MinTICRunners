@@ -30,7 +30,7 @@ const productoDelete = async (id) => {
     const { collection, client } = await getConexiones("productos")
     productoid = await collection.deleteMany({"_id":parseInt(id)});
     await getMongo.closeClientExport(client)
-    return productoid;
+    return id;
 }
 
 //FindById productos
