@@ -90,6 +90,8 @@ function Admin () {
     productoModificar.precio = parseInt(precio)
     productoModificar.stock = parseInt(stock)
 
+    alert("Producto modificado")
+
           let response = await fetch(`${url}/${idModificar}`,
           {
             method: 'PUT',

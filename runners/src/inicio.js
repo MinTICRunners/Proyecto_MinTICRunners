@@ -24,7 +24,7 @@ const Inicio = () => {
                   <form>
 
                     <div class="d-flex align-items-center mb-3 pb-1">
-                      <img id="imagenLogin" src="https://assets.stickpng.com/images/585e4beacb11b227491c3399.png" alt="Icono usuario."></img>
+                      <img id="imagenLogin" src="../styles/585e4beacb11b227491c3399.png" alt="Icono usuario."></img>
                       <span class="h1 fw-bold mb-0">Iniciar Sesión</span>
                     </div>
 
@@ -91,8 +91,8 @@ const Inicio = () => {
     })
     .then(respuesta => respuesta.json())
     .then(datos => {
-      if(datos.id != ""){
-          if(cliente == true){
+      if(datos.id !== ""){
+          if(cliente === true){
               setRedirect("cliente")
           } else {
               setRedirect("admin")

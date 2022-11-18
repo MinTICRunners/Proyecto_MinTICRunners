@@ -5,15 +5,18 @@ import Table from "react-bootstrap/esm/Table";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Navigate } from "react-router-dom";
-
-import Carrito from "./Carrito";
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 function Cliente() {
   const [datosProductos, setDatosProductos] = useState([{}])
+  const [datosCarrito, setDatosCarrito] = useState([{}])
 
    useEffect(
     ()=> {
-      fetch("http://localhost:5000/admin")
+      fetch("http://localhost:5001/cliente")
       .then(
         (response)=>(response.json())
       )
@@ -25,6 +28,19 @@ function Cliente() {
     },[]
    )
 
+   useEffect(
+    ()=> {
+      fetch("http://localhost:5001/cliente/carrito")
+      .then(
+        (response)=>(response.json())
+      )
+      .then(
+        (response)=>{
+          setDatosCarrito(response)
+        }
+      ) 
+    },[]
+   )
 
   const [ProductosEnCarrito, setProductosEnCarrito] = useState([]);
   const agregarItemACarrito = (producto) => {
@@ -54,40 +70,60 @@ function Cliente() {
           </button>
         </div>
       );
-    });
+      
+    }
+    );
   }
 
   const inicioImagen = () => (
   <img src="../../img/estrategia.jpg" alt="" />
   )
 
-  const visualizacion = () => (
-    <Table striped bordered hover variant="dark">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Nombre</th>
-          <th>Apellidos</th>
-          <th>Numero TI</th>
-          <th>Telefono</th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-        datos.map((datos, index) => {
-          return (
-            <tr>
-              <td>{index}</td>
-              <td>{datos.nombres}</td>
-              <td>{datos.apellidos}</td>
-              <td>{datos.numdoc}</td>
-              <td>{datos.telefono}</td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </Table>
+  const Carrito = () => (
+    <Table striped bordered hover>
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Cantidad</th>
+        <th>Apellidos</th>
+        <th>Numero TI</th>
+        <th>Telefono</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+      datosProductos.map((productoEnCarrito, index) => {
+        return (
+          <tr>
+            <td>{productoEnCarrito.image}</td>
+            <td>{1}</td>
+            <td>{productoEnCarrito.nombre}</td>
+            <td>{productoEnCarrito.precio}</td>
+            <td>{1 * productoEnCarrito.precio}</td>
+          </tr>
+        );
+      })}
+    </tbody>
+  </Table>
   );
+
+  const Carrito2 = () => {
+    return datosCarrito.map((elem, idx) => {
+      return (
+        <div className="productDiv" key={idx}>
+          <img src={elem.image} className="productImg" />
+          <div className="productPName"> {elem.nombre} </div>
+          <div className="productPStock"> Precio: $ {new Intl.NumberFormat("de-DE").format(`${elem.precio}`)} </div>
+          <div className="productPStock">
+             Descripcion: {elem.descripcion}
+          </div>
+          <button className="buttonBorrar"> Borrar del Carrito </button>
+        </div>
+      );
+    })
+  }
+
+  
 
   const modificacion = () => (
     <Form className="ingadmin">
@@ -153,17 +189,17 @@ function Cliente() {
           className="buttonCliente"
         >
           {" "}
-          Lista Productos{" "}
+          Productos{" "}
           </Button>
         <Button variant="outline-dark"
-          onClick={() => setVistaActual(visualizacion)}
+          onClick={() => setVistaActual()}
           className="buttonCliente"
         >
           {" "}
           Visualizar{" "}
           </Button>
         <Button variant="outline-dark"
-          onClick={() => setVistaActual(modificacion)}
+          onClick={() => setVistaActual()}
           className="buttonCliente"
         >
           {" "}
@@ -177,11 +213,11 @@ function Cliente() {
           Volver{" "}
           </Button>
         <Button variant="outline-dark"
-          onClick={() => setVistaActual(Carrito)}
+          onClick={() => setVistaActual(Carrito2)}
           className="buttonCliente"
         >
           {" "}
-          Carrito {ProductosEnCarrito.length}
+          Carrito {""}
           </Button>
       </div>
       {VistaActual}
